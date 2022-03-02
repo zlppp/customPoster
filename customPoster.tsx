@@ -67,12 +67,10 @@ const CustomPoster = (prop: CustomPosterProp) => {
     e.preventDefault();
     const moveHtml = e.target;
     setCurrentMoveId(moveHtml.id);
-    console.log(e, '拖拽开始', e, e.target.id, moveHtml.id, moveHtml.offsetWidth);
     setDragStart(true);
     setClientX(e.clientX);
     setClientY(e.clientY);
     if (moveHtml) {
-      console.log(moveHtml.offsetLeft, '(moveHtml.offsetLeft');
       setOffsetLeft(moveHtml.offsetLeft);
       setOffsetTop(moveHtml.offsetTop);
       setCurrentEleHeight(moveHtml.offsetHeight);
@@ -102,7 +100,6 @@ const CustomPoster = (prop: CustomPosterProp) => {
     } else {
       top = 0;
     }
-    console.log('拖拽结束:', left, top);
     if (currentMoveId === 'header') {
       setHeaderData({
         ...headerData,
